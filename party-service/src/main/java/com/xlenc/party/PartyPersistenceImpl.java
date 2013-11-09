@@ -1,8 +1,10 @@
 package com.xlenc.party;
 
 import com.google.code.morphia.Key;
+import com.google.code.morphia.Morphia;
 import com.google.code.morphia.dao.BasicDAO;
 import com.google.code.morphia.mapping.Mapper;
+import com.mongodb.Mongo;
 import com.mongodb.WriteResult;
 import org.bson.types.ObjectId;
 
@@ -11,21 +13,26 @@ import org.bson.types.ObjectId;
  * Date: 11/29/12
  * Time: 11:25 PM
  */
-public class PartyPersistenceImpl implements PartyPersistence {
+public class PartyPersistenceImpl extends BasicDAO<PartyImpl, ObjectId> implements PartyPersistence {
 
     private BasicDAO<PartyImpl, Object> partyBasicDAO;
     private BasicDAO<PartyTypeOption, Object> partyTypeOptionBasicDAO;
     private BasicDAO<RelationshipImpl, Object> relationshipBasicDAO;
     private BasicDAO<RelationshipTypeOption, Object> relationshipTypeOptionBasicDAO;
 
-    public PartyPersistenceImpl(BasicDAO<PartyImpl, Object> partyBasicDAO,
-                                BasicDAO<PartyTypeOption, Object> partyTypeOptionBasicDAO,
-                                BasicDAO<RelationshipImpl, Object> relationshipBasicDAO,
-                                BasicDAO<RelationshipTypeOption, Object> relationshipTypeOptionBasicDAO) {
-        this.partyBasicDAO = partyBasicDAO;
-        this.partyTypeOptionBasicDAO = partyTypeOptionBasicDAO;
-        this.relationshipBasicDAO = relationshipBasicDAO;
-        this.relationshipTypeOptionBasicDAO = relationshipTypeOptionBasicDAO;
+//    public PartyPersistenceImpl(BasicDAO<PartyImpl, Object> partyBasicDAO,
+//                                BasicDAO<PartyTypeOption, Object> partyTypeOptionBasicDAO,
+//                                BasicDAO<RelationshipImpl, Object> relationshipBasicDAO,
+//                                BasicDAO<RelationshipTypeOption, Object> relationshipTypeOptionBasicDAO) {
+//
+//        this.partyBasicDAO = partyBasicDAO;
+//        this.partyTypeOptionBasicDAO = partyTypeOptionBasicDAO;
+//        this.relationshipBasicDAO = relationshipBasicDAO;
+//        this.relationshipTypeOptionBasicDAO = relationshipTypeOptionBasicDAO;
+//    }
+
+    public PartyPersistenceImpl(Mongo mongo, Morphia morphia, String databaseName) {
+        super(mongo, morphia, databaseName);
     }
 
     public Party add(Party party) {

@@ -1,8 +1,6 @@
 package com.xlenc.party.rest;
 
 import com.xlenc.party.*;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -18,11 +16,9 @@ import static javax.ws.rs.core.Response.Status.*;
  * Date: 11/22/12
  * Time: 2:46 AM
  */
-@Component
 @Path("/parties/persons")
 public class PersonResource {
 
-    @Autowired
     private PartyService partyService;
 
     @POST

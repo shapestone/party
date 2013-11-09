@@ -17,6 +17,10 @@ public class PartyServiceImpl implements PartyService {
     @Autowired
     private PartyPersistence partyPersistence;
 
+    public PartyServiceImpl(PartyPersistence partyPersistence) {
+        this.partyPersistence = partyPersistence;
+    }
+
     @Override
     public PartyTypeOption add(PartyTypeOption partyTypeOption) {
         return partyPersistence.add(partyTypeOption);

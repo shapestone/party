@@ -33,6 +33,10 @@ public class PartyResource {
     @Autowired
     private PartyService partyService;
 
+    public PartyResource(PartyService partyService) {
+        this.partyService = partyService;
+    }
+
     @POST
     @Path("/party-type-options")
     @Consumes(MediaType.APPLICATION_JSON)
