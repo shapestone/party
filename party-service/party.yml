@@ -13,14 +13,20 @@
   # the JDBC URL
 #  url: jdbc:h2:target/example
 
-questionDatabaseName: party-db
-questionDatabaseHostName: localhost
-questionDatabasePort: 27017
+#partyDatabaseName: party-db
+#partyDatabaseHostName: localhost
+#partyDatabasePort: 27017
 
-#mongo:
-#  host: localhost
-#  port: 27017
-#  db: mydb
+mongoDatabase:
+  host: localhost
+  port: 27017
+  databaseName: party-db
+
+http:
+  port: 8090
+  adminPort: 8091
+  minThreads: 8
+  maxThreads: 1024
 
 # use the simple server factory if you only want to run on a single port
 #server:
@@ -34,13 +40,13 @@ questionDatabasePort: 27017
 #  hardNofileLimit: 1000
 #  applicationConnectors:
 #    - type: http
-#      port: 8080
+#      port: 8090
 #    - type: https
 #      port: 8443
 #      keyStorePath: example.keystore
 #      keyStorePassword: example
 #      validateCerts: false
-# this requires the npn-boot library on the JVM's boot classpath
+#this requires the npn-boot library on the JVM's boot classpath
 #    - type: spdy
 #      port: 8445
 #      keyStore: example.keystore
@@ -48,7 +54,7 @@ questionDatabasePort: 27017
 #      validateCerts: false
 #  adminConnectors:
 #    - type: http
-#      port: 8081
+#      port: 8091
 #    - type: https
 #      port: 8444
 #      keyStorePath: example.keystore

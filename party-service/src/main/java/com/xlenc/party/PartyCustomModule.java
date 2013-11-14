@@ -1,10 +1,9 @@
-package com.xlenc.party.rest;
+package com.xlenc.party;
 
-import com.xlenc.party.*;
-import org.codehaus.jackson.Version;
+import com.fasterxml.jackson.core.Version;
+import com.fasterxml.jackson.databind.module.SimpleAbstractTypeResolver;
 
-import org.codehaus.jackson.map.module.SimpleAbstractTypeResolver;
-import org.codehaus.jackson.map.module.SimpleModule;
+import com.fasterxml.jackson.databind.module.SimpleModule;
 /**
  * User: Michael Williams
  * Date: 1/27/13
@@ -19,10 +18,10 @@ public class PartyCustomModule extends SimpleModule {
     @Override
     public void setupModule(SetupContext context) {
         final SimpleAbstractTypeResolver resolver = new SimpleAbstractTypeResolver();
-        resolver.addMapping(Name.class, NameImpl.class);
-        resolver.addMapping(Person.class, PersonImpl.class);
-        resolver.addMapping(Organization.class, OrganizationImpl.class);
-        resolver.addMapping(Party.class, PartyImpl.class);
+        resolver.addMapping(Name.class, NameData.class);
+        resolver.addMapping(Person.class, PersonData.class);
+        resolver.addMapping(Organization.class, OrganizationData.class);
+        resolver.addMapping(Party.class, PartyData.class);
         context.addAbstractTypeResolver(resolver);
         super.setupModule(context);
     }

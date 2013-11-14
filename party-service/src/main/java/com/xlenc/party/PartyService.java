@@ -7,12 +7,6 @@ package com.xlenc.party;
  */
 public interface PartyService {
 
-    PartyTypeOption add(PartyTypeOption partyTypeOption);
-
-    PartyTypeOption read(PartyTypeOption partyTypeOption);
-
-    int delete(PartyTypeOption partyTypeOption);
-
     Person add(Person person);
 
     Person addEmptyPerson();
@@ -26,17 +20,5 @@ public interface PartyService {
     Organization read(Organization organization);
 
     int delete(Organization organization);
-
-    RelationshipTypeOption add(RelationshipTypeOption relationshipTypeOption);
-
-    RelationshipTypeOption read(RelationshipTypeOption relationshipTypeOption);
-
-    int delete(RelationshipTypeOption relationshipTypeOption);
-
-    Relationship add(Relationship partyRelationship);
-
-    Relationship read(Relationship relationship);
-
-    int delete(Relationship relationship);
 
 }

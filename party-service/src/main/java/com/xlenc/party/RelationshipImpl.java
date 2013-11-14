@@ -68,8 +68,8 @@ public @Data class RelationshipImpl implements Relationship {
 
     @PostLoad
     void postLoad() {
-        this.firstRole = new PartyImpl(firstRolePartyId);
-        this.secondRole = new PartyImpl(secondRolePartyId);
+        this.firstRole = new PartyData(firstRolePartyId);
+        this.secondRole = new PartyData(secondRolePartyId);
     }
 
 }

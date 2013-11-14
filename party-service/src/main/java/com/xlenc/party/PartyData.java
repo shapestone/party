@@ -9,8 +9,7 @@ import java.util.Date;
  * Date: 1/15/11
  * Time: 7:16 PM
  */
-@Entity("parties")
-public @Data class PartyImpl implements Party {
+public @Data class PartyData implements Party {
 
     @Id
     private String id;
@@ -23,10 +22,10 @@ public @Data class PartyImpl implements Party {
     @Version
     private Long version;
 
-    public PartyImpl() {
+    public PartyData() {
     }
 
-    public PartyImpl(String id) {
+    public PartyData(String id) {
         super();
         this.id = id;
     }

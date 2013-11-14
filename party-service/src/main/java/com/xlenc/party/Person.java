@@ -9,9 +9,9 @@ import java.util.Date;
  */
 public interface Person extends Party {
 
-    Name[] getNames();
+    PersonalName getPersonalName();
 
-    void setNames(Name[] names);
+    void setPersonalName(PersonalName personalName);
 
     Date getDateOfBirth();
 

@@ -1,7 +1,8 @@
 package com.xlenc.party.rest;
 
-import org.codehaus.jackson.Version;
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.core.Version;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.xlenc.party.PartyCustomModule;
 
 import javax.ws.rs.ext.ContextResolver;
 

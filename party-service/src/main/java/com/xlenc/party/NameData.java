@@ -11,12 +11,12 @@ import lombok.NoArgsConstructor;
  */
 @NoArgsConstructor
 @AllArgsConstructor
-public @Data class NameImpl implements Name {
+public @Data class NameData implements Name {
     private String type;
     private String text;
     private int ordinal;
 
-    public NameImpl(String type, String text) {
+    public NameData(String type, String text) {
         this.type = type;
         this.text = text;
     }

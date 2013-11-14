@@ -2,36 +2,23 @@ package com.xlenc.party;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.yammer.dropwizard.config.Configuration;
-import org.hibernate.validator.constraints.NotEmpty;
+import lombok.Data;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 /**
  * User: Michael Williams
  * Date: 11/4/13
  * Time: 12:30 AM
  */
-public class PartyServiceConfiguration extends Configuration {
+public @Data
+class PartyServiceConfiguration extends Configuration {
 
-    @NotEmpty
-    @JsonProperty
-    private String partyDatabaseName;
+    @Valid
+    @NotNull
+    @JsonProperty("mongoDatabase")
+    private MongoDatabaseConfiguration mongoDatabaseConfiguration = new MongoDatabaseConfiguration();
 
-    @NotEmpty
-    @JsonProperty
-    private String partyDatabaseHostName;
-
-    @JsonProperty
-    private int partyDatabasePort;
-
-    public String getPartyDatabaseName() {
-        return partyDatabaseName;
-    }
-
-    public String getPartyDatabaseHostName() {
-        return partyDatabaseHostName;
-    }
-
-    public int getPartyDatabasePort() {
-        return partyDatabasePort;
-    }
 
 }

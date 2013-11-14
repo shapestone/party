@@ -1,5 +1,6 @@
 package com.xlenc.party;
 
+import com.google.code.morphia.annotations.Entity;
 import com.google.code.morphia.annotations.Property;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -11,20 +12,21 @@ import java.util.Date;
  * Date: 1/15/11
  * Time: 7:23 PM
  */
+@Entity("persons")
 @EqualsAndHashCode(callSuper = false)
-public @Data class PersonImpl extends PartyImpl implements Person {
+public @Data class PersonData extends PartyData implements Person {
 
-    @Property("names")
-    private Name[] names;
+    @Property("personalName")
+    private PersonalName personalName;
 
     @Property("dateOfBirth")
     private Date dateOfBirth;
 
-    public PersonImpl() {
+    public PersonData() {
         super();
     }
 
-    public PersonImpl(String id) {
+    public PersonData(String id) {
         super(id);
     }
 
