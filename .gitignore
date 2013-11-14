@@ -5,6 +5,7 @@
 *.iws
 *.ids
 .idea/
+target/
 
 # OS generated files #
 ######################
