@@ -24,7 +24,7 @@ public class PartyRestService extends Service<PartyServiceConfiguration> {
         bootstrap.setName("Party Rest Service");
         final String name = "PartyCustomModule";
         final Version snapshot = new Version(1, 0, 0, "SNAPSHOT", "com.xlenc.party", "party-service");
-        PartyCustomModule partyCustomModule = new PartyCustomModule(name, snapshot);
+        final PartyCustomModule partyCustomModule = new PartyCustomModule(name, snapshot);
         bootstrap.getObjectMapperFactory().registerModule(partyCustomModule);
     }
 
