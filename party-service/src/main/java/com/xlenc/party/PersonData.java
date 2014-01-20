@@ -16,9 +16,12 @@ import java.util.Date;
 @EqualsAndHashCode(callSuper = false)
 public @Data class PersonData extends PartyData implements Person {
 
-    @Property("personalName")
-    private PersonalName personalName;
-
+    @Property("firstName")
+    private String firstName;
+    @Property("middleName")
+    private String middleName;
+    @Property("lastName")
+    private String lastName;
     @Property("dateOfBirth")
     private Date dateOfBirth;
 

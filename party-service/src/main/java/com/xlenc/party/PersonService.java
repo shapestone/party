@@ -24,6 +24,11 @@ public class PersonService {
         return personPersistence.saveParty(new PersonData());
     }
 
+    public PersonData update(PersonData person) {
+        notNull(person, "Parameter \"person\" cannot be null.");
+        return personPersistence.updateParty(person);
+    }
+
     public PersonData read(PersonData personData) {
         notNull(personData, "Parameter \"person\" cannot be null.");
         return personPersistence.findParty(personData);

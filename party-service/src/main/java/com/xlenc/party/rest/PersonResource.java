@@ -30,8 +30,19 @@ public class PersonResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response addPerson(PersonData person) {
         final Person addedPerson = partyService.add(person);
-        final Map<String, Object> map = singletonMap("id", (Object) addedPerson.getId());
-        return Response.ok().status(CREATED).entity(map).build();
+        return Response.ok().status(CREATED).entity(addedPerson).build();
+    }
+
+    @PUT
+    @Path("/{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updatePerson(@PathParam("id") String id, PersonData person) {
+        if (person.getId() == null && id != null) {
+            person.setId(id);
+        }
+        final Person addedPerson = partyService.update(person);
+        return Response.ok().status(CREATED).entity(addedPerson).build();
     }
 
     @POST

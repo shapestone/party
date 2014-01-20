@@ -1,5 +1,7 @@
 package com.xlenc.party;
 
+import com.google.code.morphia.annotations.Property;
+
 import java.util.Date;
 
 /**
@@ -9,9 +11,17 @@ import java.util.Date;
  */
 public interface Person extends Party {
 
-    PersonalName getPersonalName();
+    String getFirstName();
 
-    void setPersonalName(PersonalName personalName);
+    void setFirstName(String firstName);
+
+    String getMiddleName();
+
+    void setMiddleName(String middleName);
+
+    String getLastName();
+
+    void setLastName(String lastName);
 
     Date getDateOfBirth();
 

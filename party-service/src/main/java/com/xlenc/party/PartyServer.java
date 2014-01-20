@@ -17,14 +17,14 @@ import java.net.UnknownHostException;
  * Date: 11/4/13
  * Time: 12:54 AM
  */
-public class PartyRestService extends Service<PartyServiceConfiguration> {
+public class PartyServer extends Service<PartyServiceConfiguration> {
 
     @Override
     public void initialize(Bootstrap<PartyServiceConfiguration> bootstrap) {
         bootstrap.setName("Party Rest Service");
         final String name = "PartyCustomModule";
         final Version snapshot = new Version(1, 0, 0, "SNAPSHOT", "com.xlenc.party", "party-service");
-        PartyCustomModule partyCustomModule = new PartyCustomModule(name, snapshot);
+        final PartyCustomModule partyCustomModule = new PartyCustomModule(name, snapshot);
         bootstrap.getObjectMapperFactory().registerModule(partyCustomModule);
     }
 
@@ -61,7 +61,7 @@ public class PartyRestService extends Service<PartyServiceConfiguration> {
     }
 
     public static void main(String[] args) throws Exception {
-        new PartyRestService().run(args);
+        new PartyServer().run(args);
     }
 
 }

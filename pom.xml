@@ -11,8 +11,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>party-api</module>
-        <module>party-client</module>
+        <!--<module>party-api</module>-->
+        <!--<module>party-client</module>-->
         <module>party-service</module>
     </modules>
 
