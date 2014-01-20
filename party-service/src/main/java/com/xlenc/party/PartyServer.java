@@ -17,7 +17,7 @@ import java.net.UnknownHostException;
  * Date: 11/4/13
  * Time: 12:54 AM
  */
-public class PartyRestService extends Service<PartyServiceConfiguration> {
+public class PartyServer extends Service<PartyServiceConfiguration> {
 
     @Override
     public void initialize(Bootstrap<PartyServiceConfiguration> bootstrap) {
@@ -61,7 +61,7 @@ public class PartyRestService extends Service<PartyServiceConfiguration> {
     }
 
     public static void main(String[] args) throws Exception {
-        new PartyRestService().run(args);
+        new PartyServer().run(args);
     }
 
 }
